@@ -8,7 +8,7 @@
       text-align: center;
     }
     .flash {
-      animation: flashAnimation 2s infinite;
+      animation: flashAnimation 1s infinite;
     }
     @keyframes flashAnimation {
       0% {
@@ -42,7 +42,7 @@
     }
   </style>
   <script>
-    const textOptions = ["option 1", "option 2", "option 3", "option 4"];
+    const textOptions = ["YES!", "YES! A raging bitch", "YES, A psych-bitch!", "a proud lunatic-bitch!"];
 
     function getRandomText() {
       const randomIndex = Math.floor(Math.random() * textOptions.length);
@@ -60,7 +60,7 @@
         const popupText = document.createElement("p");
         popupText.textContent = getRandomText();
         popupText.classList.add("flash");
-        popupText.style.fontSize = "2em";
+        popupText.style.fontSize = "4em";
         document.body.appendChild(popupText);
         document.body.classList.add("flash");
       }
@@ -68,7 +68,7 @@
   </script>
 </head>
 <body>
-  <p id="sampleText">sample text a</p>
-  <button id="clickButton" onclick="showPopup()">Click me</button>
+  <p id="sampleText"></p>
+  <button id="clickButton" onclick="showPopup()">IS TIARA A BITCH?</button>
 </body>
 </html>

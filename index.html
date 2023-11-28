@@ -42,7 +42,7 @@
     }
   </style>
   <script>
-    const textOptions = ["YES!", "YES! A raging bitch", "YES, A psycho-bitch!", "a proud lunatic-bitch!"];
+    const textOptions = ["YES!", "OBVIOUSLY!", "YES! A raging bitch", "YES, A psycho-bitch!", "a proud lunatic-bitch!", "Is the sky blue?"];
 
     function getRandomText() {
       const randomIndex = Math.floor(Math.random() * textOptions.length);
@@ -62,6 +62,7 @@
         popupText.classList.add("flash");
         popupText.style.fontFamily = "Arial, sans-serif";
         popupText.style.fontSize = "4em";
+        button.style.fontSize = "2em";
         document.body.appendChild(popupText);
         document.body.classList.add("flash");
       }

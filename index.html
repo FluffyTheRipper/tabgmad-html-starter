@@ -6,6 +6,37 @@
   <style>
     body {
       text-align: center;
+      font-family: 'Arial', sans-serif;
+      font-size: 2em
+    }
+    
+    body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    button {
+      margin-bottom: 20px; /* Adjust the margin as needed */
+        background-color: grey;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    }
+    .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+    }
+    .hidden {
+    	display: none;
     }
     .flash {
       animation: flashAnimation 1s infinite;
@@ -39,6 +70,7 @@
         background-color: violet;
         color: red;
       }
+
     }
   </style>
   <script>
@@ -74,29 +106,32 @@
       const randomIndex = Math.floor(Math.random() * textOptions.length);
       return textOptions[randomIndex];
     }
-
-    function showPopup() {
+    
+    function toggle() {
       const button = document.getElementById("clickButton");
       const sampleText = document.getElementById("sampleText");
       
       
-      if (button && sampleText) {
-        button.remove();
-        sampleText.remove();
-
-        const popupText = document.createElement("p");
-        popupText.textContent = getRandomText();
-        popupText.classList.add("flash");
-        popupText.style.fontFamily = "Arial, sans-serif";
-        popupText.style.fontSize = "4em";
-        document.body.appendChild(popupText);
-        document.body.classList.add("flash");
-      }
+      sampleText.classList.toggle("hidden");
+      
+      
+      
+      popupText.classList.toggle("hidden");
+      popupText.textContent = getRandomText();
+      popupText.classList.toggle("flash");
+      popupText.style.fontFamily = "Arial, sans-serif";
+      popupText.style.fontSize = "4em";
+      
+      document.body.classList.toggle("flash");
     }
+
   </script>
 </head>
 <body>
-  <p id="sampleText"></p>
-  <button id="clickButton" style="font-size: 2em;" onclick="showPopup()">IS TIARA A BITCH?</button>
+    <p id="sampleText" class="main">Is Tiara a Bitch?<br>|<br>|<br>|<br>|<br>|<br>V</p>
+    <p id="popupText" class="hidden">rt</p>
+  <div class="container">
+    <button id="clickButton" style="font-size: 2em;" onclick="toggle()">&nbsp;</button>
+  </div>
 </body>
-</html>
+</html>;
